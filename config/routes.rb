@@ -1,9 +1,16 @@
 TheAlife::Application.routes.draw do
-  get "static_pages/home"
 
-  get "static_pages/forum"
+  get "users/new"
 
-  get "static_pages/conprepgo"
+  root to: 'static_pages#home'
+
+  match '/signup',  to: 'users#new'
+
+  match '/conprepgo', to: 'static_pages#conprepgo'
+
+  match '/about', to: 'static_pages#about'
+
+  match '/forum', to: 'static_pages#forum'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
